@@ -10,6 +10,8 @@ def customers(request):
 
 
 def customer(request, id):
-    data = Customer.objects.get(pk=id)
-    serializer = CustomerSerializer(data)  
-    return JsonResponse({'customer': serializer.data})
+    try:
+        data = Customer.objects.get(pk=id)
+    except  Customer.DoesNotExist:
+        serializer = CustomerSerializer(data)  
+    return  JsonResponse({'customer': serializer.data})
