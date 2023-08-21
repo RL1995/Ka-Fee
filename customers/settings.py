@@ -59,13 +59,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 
-
-
-
-
-
-
-
 ROOT_URLCONF = 'customers.urls'
 
 TEMPLATES = [
